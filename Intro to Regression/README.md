@@ -46,3 +46,17 @@ Model mampu menjelaskan **91.9% variansi harga rumah**. Selisih R² train dan te
 2. **Feature engineering** — buat fitur baru dari kombinasi fitur yang sudah ada untuk meningkatkan akurasi
 
 ---
+## Menghapus Fitur Lemah
+Berdasarkan kesimpulan poin 3, dilakukan train ulang dengan menghapus Avg. Area Number of Bedrooms.
+### Perbandingan Hasil
+| Metrik | Model Awal (5 fitur) | Model Baru (4 fitur) | Perubahan |
+|--------|---------------------|---------------------|-----------|
+| MAE | 81,739 | 81,629 | ↓ 110 ✅ |
+| RMSE | 102,418 | 102,282 | ↓ 136 ✅ |
+| R² Test | 0.919 | 0.920 | ↑ 0.001 ✅ |
+| R² Train | 0.917 | 0.917 | → sama |
+| Shapiro p-value | 0.6245 | 0.6245 | → sama persis |
+
+Menghapus Avg. Area Number of Bedrooms tidak menurunkan performa model — semua metrik tetap atau sedikit membaik, dan asumsi normalitas residuals tetap terpenuhi (p-value = 0.6245).
+
+Ini mengkonfirmasi bahwa fitur tersebut memang tidak berkontribusi berarti. Model dengan 4 fitur lebih sederhana dan efisien tanpa mengorbankan akurasi — sesuai prinsip Occam's Razor dalam machine learning: pilih model yang lebih sederhana jika performanya setara.
