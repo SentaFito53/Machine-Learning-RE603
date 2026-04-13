@@ -1,4 +1,4 @@
-# 🏠 USA Housing Price Prediction
+# USA Housing Price Prediction
 ### Supervised Learning — Linear Regression
 
 ---
